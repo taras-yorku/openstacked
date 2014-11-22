@@ -9,17 +9,20 @@ isFunction() {
 
 # Crude Logging
 log() {
-  if [ "$1" = ":br" ]; then echo "\n\n"; return; fi
+  if [ "$1" = ":br" ]; then echo -e "\n\n"; return; fi
 
-  if [ "$2" = ":h1" ]; then echo "\n=============================================="; fi
-  if [ "$2" = ":h2" ]; then echo "\n++++++++++++++++++++++++++++"; fi
+  if [ "$2" = ":h1" ]; then echo -e "\n=============================================="; fi
+  if [ "$2" = ":h2" ]; then echo -e "\n++++++++++++++++++++++++++++"; fi
 
-  echo "log: $1"
-  
-  if [ "$2" = ":br" ]; then echo "\n\n"; fi
-  if [ "$2" = ":u" ]; then echo "---------------------------------"; fi
-  if [ "$2" = ":h1" ]; then echo "==============================================\n"; fi
-  if [ "$2" = ":h2" ]; then echo "\n++++++++++++++++++++++++++++"; fi
+  PREFIX=""
+  if [ "$2" = ":pre" ] && [[ -n "$3" ]]; then PREFIX="$3: "; else PREFIX=""; fi
+
+  echo -e "$PREFIX$1"
+
+  if [ "$2" = ":br" ]; then echo -e "\n\n"; fi
+  if [ "$2" = ":u" ]; then echo -e "---------------------------------"; fi
+  if [ "$2" = ":h1" ]; then echo -e "==============================================\n"; fi
+  if [ "$2" = ":h2" ]; then echo -e "\n++++++++++++++++++++++++++++"; fi
 
 }
 
@@ -29,7 +32,7 @@ log() {
 
 if isFunction log;
 then
-  log "Found Log Function. Using logging system."
+  log "Found Log Function. Using logging system." ":pre" "LOG"
 else
   echo "not found"
 fi
