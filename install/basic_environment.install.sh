@@ -51,10 +51,11 @@ log ":br"
 
 log "Installing Messaging Server .... RabbitMQ" ":u"
 yum install -y -q erlang rabbitmq-server
-echo 0 > /selinux/enforce
+
 
 log "Starting RabbitMQ"
 systemctl enable rabbitmq-server.service
 systemctl start rabbitmq-server.service
+systemctl restart rabbitmq-server.service
 
 rabbitmqctl change_password guest "$RABBIT_PASS"
