@@ -1,8 +1,8 @@
 #!/bin/bash
 
-DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+export STACKED_DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$STACKED_DIR" ]]; then STACKED_DIR="$PWD"; fi
 
-source "$DIR/common/passwords.sh"
-source "$DIR/common/functions.sh"
-source "$DIR/setup/basic_environment.sh"
+source "$STACKED_DIR/common/passwords.sh"
+source "$STACKED_DIR/common/functions.sh"
+# source "$DIR/setup/basic_environment.sh"

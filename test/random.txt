@@ -1,0 +1,7 @@
+---------------------------
+This is a random file with some variables and things.
+
+Variable one: ${TEST}
+Variable two: ${STACKED}
+
+---------------------------
