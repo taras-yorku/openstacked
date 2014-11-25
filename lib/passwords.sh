@@ -2,9 +2,10 @@
 RANDOM_PASSWORD=`openssl rand -hex 10`   #  Random password to use as password
 PASSWORD=root                            #  Use either $RANDOM_PASSWORD or choose one
 
-MYSQL_ROOT_PASS=$PASSWORD                # Password fo MySQL root account   
+MYSQL_ROOT_PASS=$PASSWORD                # Password fo MySQL root account
 RABBIT_PASS=$PASSWORD                    #  Password of user guest of RabbitMQ
 KEYSTONE_DBPASS=$PASSWORD                #	Database password of Identity service
+KEYSTONE_DBUSER=keystone                 #  KEYSTONE DB User
 DEMO_PASS=$PASSWORD                      #	Password of user demo
 ADMIN_PASS=$PASSWORD                     #	Password of user admin
 GLANCE_DBPASS=$PASSWORD                  #	Database password for Image Service
