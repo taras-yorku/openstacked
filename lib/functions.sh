@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Check if Function exists
 function isFunction() {
   result=`type -t $1 | grep -q 'function'`

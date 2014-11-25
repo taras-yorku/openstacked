@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+export STACKED_DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$STACKED_DIR" ]]; then STACKED_DIR="$PWD"; fi
 
 source "$DIR/functions.sh"
-source "$DIR/remove/basic_environment.uninstall.sh"
+source "$STACKED_DIR/services/plumbing/uninstall.centos.sh"

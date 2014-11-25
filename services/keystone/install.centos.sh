@@ -1,7 +1,9 @@
 #!/bin/bash
 
+CURRENT_DIR="${BASH_SOURCE%/*}"
+
 ## CONSTANTS
-KEYSTONE_SQL_INSTALL="$STACKED_DIR/etc/keystone.install.sql"
+KEYSTONE_SQL_INSTALL="$CURRENT_DIR/support/install.sql"
 
 log "Installing Keystone module" ":h1"
 
