@@ -5,4 +5,5 @@ if [[ ! -d "$STACKED_DIR" ]]; then STACKED_DIR="$PWD"; fi
 
 source "$STACKED_DIR/common/passwords.sh"
 source "$STACKED_DIR/common/functions.sh"
-# source "$DIR/setup/basic_environment.sh"
+# source "$STACKED_DIR/install/basic_environment.install.sh"
+source "$STACKED_DIR/install/keystone.install.sh"

@@ -1,5 +1,5 @@
 #!/bin/bash
-if hash m4 2>/dev/null; then echo "m4"; else yum -y -q install m4; fi
+
 
 # Check if Function exists
 function isFunction() {
@@ -25,13 +25,15 @@ function log() {
   if [ "$2" = ":br" ]; then puts "\n\n"; fi
   if [ "$2" = ":u" ]; then puts "-----------------------------------------\n"; fi
   if [ "$2" = ":h1" ]; then puts "==============================================\n"; fi
-  if [ "$2" = ":h2" ]; then puts "\n++++++++++++++++++++++++++++"; fi
+  if [ "$2" = ":h2" ]; then puts "++++++++++++++++++++++++++++"; fi
 
 }
 
+# System Messages
+function sys_log(){ log "$1" ":pre" "SYS"; }
 
 # Read File contens
-function read_file() { contents=`cat "$1"`; echo "$contents"; }
+function read_file() { contents=`cat "$1"`; echo -e "$contents"; }
 
-# Substitute variables in a string
-function sub_vars() { eval echo -e "$1"; }
+#### SUPPORTING Libraries
+if hash m4 2>/dev/null; then sys_log "Using m4"; else yum -y -q install m4; fi
